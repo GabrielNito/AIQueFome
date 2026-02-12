@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-5, .cls-6 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 20px;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        fill: #ed1c24;
+      }
+
+      .cls-8 {
+        font-family: InterItalic-SemiBoldItalic, Inter;
+        font-size: 146px;
+        font-style: italic;
+        font-variation-settings: 'opsz' 14, 'wght' 600;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <g id="Itau">
+    <rect class="cls-7" x="0" y="0" width="1000" height="1000" rx="200" ry="200"/>
+  </g>
+  <g id="Texto">
+    <text class="cls-8" transform="translate(91.19 539.53)"><tspan class="cls-4" x="0" y="0">AI</tspan><tspan class="cls-2" x="146.64" y="0">Que</tspan><tspan class="cls-1" x="433.79" y="0">F</tspan><tspan class="cls-3" x="514.92" y="0">ome</tspan></text>
+  </g>
+  <g id="Pote">
+    <path class="cls-6" d="M905.24,585.53c0,111.02-117.6,205.12-280.24,237.58v57.11h-250v-57.11c-162.64-32.46-280.24-126.56-280.24-237.58h810.48Z"/>
+  </g>
+  <g id="Fumaça">
+    <path class="cls-5" d="M618.04,392.35s39.91-31.7,46.96-81,38.74-89.22,54-96.26"/>
+    <path class="cls-5" d="M490.07,384.92s53.82-59.76,45.88-121.53,28.92-126.5,51.52-143.4"/>
+    <path class="cls-5" d="M368.25,397.9s33.96-47.25,25.22-100.56,13.25-106,27.95-118.84"/>
+  </g>
+</svg>

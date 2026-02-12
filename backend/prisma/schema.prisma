@@ -1,0 +1,104 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+enum Role {
+    ADMIN
+    CLIENT
+    VIP_CLIENT
+}
+
+model User {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    email     String   @unique
+    password  String
+    name      String?
+    role      Role     @default(CLIENT)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("users")
+}
+
+model Category {
+    id          String    @id @default(auto()) @map("_id") @db.ObjectId
+    name        String    @unique
+    description String?
+    createdAt   DateTime  @default(now())
+    updatedAt   DateTime  @updatedAt
+    products    Product[]
+    combos      Combo[]
+
+    @@map("categories")
+}
+
+model Product {
+    id              String      @id @default(auto()) @map("_id") @db.ObjectId
+    name            String
+    description     String?
+    price           Float
+    salePrice       Float?
+    categoryId      String?     @db.ObjectId
+    category        Category?   @relation(fields: [categoryId], references: [id])
+    imageUrl        String?
+    isAvailable     Boolean     @default(true)
+    ingredients     String[]
+    serving         Int?
+    tags            String[]
+    nutritionalInfo Json?
+    createdAt       DateTime    @default(now())
+    updatedAt       DateTime    @updatedAt
+    comboItems      ComboItem[]
+
+    @@index([categoryId])
+    @@index([isAvailable])
+    @@index([tags])
+    @@map("products")
+}
+
+model Combo {
+    id          String  @id @default(auto()) @map("_id") @db.ObjectId
+    name        String
+    description String?
+
+    price         Float
+    originalPrice Float
+
+    categoryId String?   @db.ObjectId
+    category   Category? @relation(fields: [categoryId], references: [id])
+    tags       String[]
+
+    items ComboItem[]
+
+    isAvailable Boolean @default(true)
+    imageUrl    String?
+    isFeatured  Boolean @default(false)
+
+    activeFrom  DateTime?
+    activeUntil DateTime?
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([categoryId])
+    @@map("combos")
+}
+
+model ComboItem {
+    id       String @id @default(auto()) @map("_id") @db.ObjectId
+    quantity Int
+
+    comboId String @db.ObjectId
+    combo   Combo  @relation(fields: [comboId], references: [id])
+
+    productId String  @db.ObjectId
+    product   Product @relation(fields: [productId], references: [id])
+
+    @@index([comboId])
+    @@index([productId])
+}
