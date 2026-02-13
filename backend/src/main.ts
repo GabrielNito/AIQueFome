@@ -15,7 +15,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: true,
+    origin: ["https://aiquefome.vercel.app", "http://localhost:3000"],
     credentials: true,
   });
 
