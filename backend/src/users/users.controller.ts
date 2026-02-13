@@ -18,10 +18,10 @@ import {
   ApiBody,
 } from "@nestjs/swagger";
 import { UsersService } from "./users.service";
-import { Roles } from "@/auth/decorators/roles.decorator";
-import { Role } from "@/auth/enums/role.enum";
-import { JwtAuthGuard } from "@/auth/guards/jwtAuth.guard";
-import { RolesGuard } from "@/auth/guards/roles.guard";
+import { Roles } from "../auth/decorators/roles.decorator";
+import { Role } from "../auth/enums/role.enum";
+import { JwtAuthGuard } from "../auth/guards/jwtAuth.guard";
+import { RolesGuard } from "../auth/guards/roles.guard";
 import { UpdateUserDto } from "./dto/updateUser.dto";
 import { UpdateUserSwaggerDto } from "./dto/userSwagger.dto";
 

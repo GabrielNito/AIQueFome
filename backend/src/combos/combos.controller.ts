@@ -18,10 +18,10 @@ import {
   ApiBody,
   ApiBearerAuth,
 } from "@nestjs/swagger";
-import { Roles } from "@/auth/decorators/roles.decorator";
-import { Role } from "@/auth/enums/role.enum";
-import { JwtAuthGuard } from "@/auth/guards/jwtAuth.guard";
-import { RolesGuard } from "@/auth/guards/roles.guard";
+import { Roles } from "../auth/decorators/roles.decorator";
+import { Role } from "../auth/enums/role.enum";
+import { JwtAuthGuard } from "../auth/guards/jwtAuth.guard";
+import { RolesGuard } from "../auth/guards/roles.guard";
 import { CombosService } from "./combos.service";
 import { CreateComboDto } from "./dto/createCombo.dto";
 import {
